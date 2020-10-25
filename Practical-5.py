@@ -1,4 +1,4 @@
-list1 = [1,3,10,12,16,19,23,32,36,43,56]
+list1 = [45,9,6,1,74,88,56,34,89,76,99]
 print("List = ",list1)
 size = len(list1)
 def binary_search(x):
