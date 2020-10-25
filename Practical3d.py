@@ -42,5 +42,3 @@ if v in ("i", "I", "r", "R"):
 else:
 	print("Invalid choice")
 		
-
-
