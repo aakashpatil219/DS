@@ -16,7 +16,6 @@ class LinkedList:
     def __len__(self):
         return self.size
     
-    
     def is_empty(self):
         return self.size == 0 
     
@@ -43,7 +42,6 @@ class LinkedList:
             last_object = last_object.next
         return last_object
         
-    
     def remove_head(self):
         if self.is_empty():
             print("Empty Singly linked list")
@@ -56,27 +54,7 @@ class LinkedList:
         new_value = Node(e)
         self.get_tail().next = new_value
         self.size += 1
-        
-    def find_second_last_element(self):
-        #second_last_element = None
-        
-        
-        if self.size >= 2:
-            first = self.head 
-            temp_counter = self.size -2
-            while temp_counter > 0:
-                first = first.next 
-                temp_counter -= 1 
-            return first
-        
-        
-        else:
-            print("Size not sufficient")
-            
-        return None
-
-        
-        
+  
     def remove_tail(self):
         if self.is_empty():
             print("Empty Singly linked list")
@@ -100,35 +78,6 @@ class LinkedList:
             element_node = element_node.next
             counter += 1
         return element_node
-  
-        
-                
-    def remove_between_list(self,position):
-        if position > self.size-1:
-            print("Index out of bound")
-        elif position == self.size-1:
-            self.remove_tail()
-        elif position == 0:
-            self.remove_head()
-        else:
-            prev_node = self.get_node_at(position-1)
-            next_node = self.get_node_at(position+1)
-            prev_node.next = next_node
-            self.size -= 1
-            
-    def add_between_list(self,position,element):
-        if position > self.size:
-            print("Index out of bound")
-        elif position == self.size:
-            self.add_tail(element)
-        elif position == 0:
-            self.add_head(element)
-        else:
-            prev_node = self.get_node_at(position-1)
-            current_node = self.get_node_at(position)
-            prev_node.next = element
-            element.next = current_node
-            self.size -= 1
         
     def search (self,search_value):
         index = 0 
@@ -151,6 +100,8 @@ class LinkedList:
             prev = current 
             current = next
         self.head = prev
+        print("Reversed Linked List")
+        LinkedList.display(self)
     
     def merge(self,linkedlist_value):
         if self.size > 0:
@@ -198,6 +149,7 @@ while True:
      	
     elif ins=="C" or ins=="c":
      	L.display()
+     	L.display()
      	
     elif ins=="B" or ins=="b":
      	break
@@ -207,26 +159,3 @@ while True:
      	
     else:
      	continue
-
- 
-# 1,2, (size , 2 , SLE = 0)
-# 1,2,3,5 (size , 3 , SLE = 1)
-
-            
-'''
-l1 = 1,2,3,5
-l2 = 3,5,6,7
-
-l1.copy(l2)
-
-l1 = 3,5,6,7
-
-l1.head = l2.head
-l1.size = l2.size
-
-l1 = None
-l2 = 1,2,3
-
-
-l1.merge(l2) ? => l1 = 3,1,2,14,5,4,2,9,1,2,14,5,4,2,9,1,2,14,5,4,2,9,1,2,14,5,4,2,9'''
-
