@@ -1,4 +1,4 @@
-list1 = [3,27,1,2,34,56,74,8,81,45,76,79]
+list1 = [74,8,81,45,76,79,0,-45,3,27,1,2,34,56]
 print("List = ",list1)
 n = len(list1)
 def bubbleSort():
@@ -28,7 +28,7 @@ def InsertionSort():
         list1[j+1] = c
     print(list1)
 
-inp = input("Enter (B) for Bubble Sort, (S) for elsection Sort and (I) for Insertion Sort \n")
+inp = input("Enter (B) for Bubble Sort, (S) for selection Sort and (I) for Insertion Sort \n")
 if inp=="B" or inp=="b":
 	bubbleSort()
 elif inp=="S" or inp=="s":
