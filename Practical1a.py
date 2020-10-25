@@ -1,4 +1,4 @@
-list1 = [3,1,8,4,87,26,36,57,23,98,22]
+list1 = [32,45,5,19,47,9,13,17,22,62,74,1]
 size = len(list1)
 def searching(n):
 	print("SEARCHING")
@@ -40,7 +40,7 @@ def revrse():
 			break
 	print(list1)
 
-searching(57)
+searching(74)
 sorting()
 merging()
 revrse()
