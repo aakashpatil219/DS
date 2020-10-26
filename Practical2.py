@@ -54,7 +54,8 @@ class LinkedList:
         new_value = Node(e)
         self.get_tail().next = new_value
         self.size += 1
-  
+
+
     def remove_tail(self):
         if self.is_empty():
             print("Empty Singly linked list")
@@ -67,7 +68,19 @@ class LinkedList:
             if Node:
                 Node.next = None
                 self.size -= 1
-                
+
+    def find_second_last_element(self):
+        if self.size >= 2:
+            first = self.head 
+            temp_counter = self.size -2
+            while temp_counter > 0:
+                first = first.next 
+                temp_counter -= 1 
+            return first
+        else:
+            print("Size not sufficient")
+        return None
+
     def get_node_at(self,index):
         element_node = self.head
         counter = 0
@@ -107,13 +120,23 @@ class LinkedList:
         if self.size > 0:
             last_node = self.get_node_at(self.size-1)
             last_node.next = linkedlist_value.head
-            self.size = self.size + linkedlist_value.size
-            
+            self.size = self.size + linkedlist_value.size 
         else:
             self.head = linkedlist_value.head
             self.size = linkedlist_value.size
+
+            
 L = LinkedList()
 L.add_head(0)
+L2 = LinkedList()
+L2.add_head(2)
+L2.add_head(5)
+L2.add_head(8)
+L2.add_head(13)
+L2.add_tail(33)
+print("Second Linked List")
+L2.display()
+
 print("Insertion at head (Ih) or tail (It)  Deletion at head (Dh) or tail (Dt) Searching (S) Reverse & Display (R)&(D) ConcatList (C) Display list (D) Break from loop (B)")
 
 while True:
@@ -148,8 +171,9 @@ while True:
         L.rev_lst()
      	
     elif ins=="C" or ins=="c":
-     	L.display()
-     	L.display()
+        print("Merged List")
+        L.merge(L2)
+        L.display()
      	
     elif ins=="B" or ins=="b":
      	break
